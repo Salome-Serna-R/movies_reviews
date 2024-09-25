@@ -1,0 +1,39 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<div class="container">  
+    <form action="{% url 'recommend' %}"> 
+        <div class="mb-3">
+            <label for="recomendation_required" class="form-label"> 
+                Enter a movie description or theme:
+            </label>
+            <input id="recomendation_required" type="text" class="form-control" name="recomendation_required"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Get Recommendation</button>
+    </form>   
+    <div class="row row-cols-1 row-cols-md-3 g-4"> 
+        {% if recomended_movie %}
+        <div class="card mt-4">
+            <img src="{{ recomended_movie.image.url }}" class="card-img-top" alt="{{ recomended_movie.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ recomended_movie.title }}</h5>
+                <p class="card-text">{{ recomended_movie.description }}</p>
+                <p class="card-text"><strong>Genre:</strong> {{ recomended_movie.genre }}</p>
+                <p class="card-text"><strong>Year:</strong> {{ recomended_movie.year }}</p>
+                {% if recomended_movie.url %}
+                    <a href="{{ recomended_movie.url }}" class="btn btn-primary">More Info</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <br/>
+</div>
+
+{% endblock content %}
+
+
+
+
+
+
