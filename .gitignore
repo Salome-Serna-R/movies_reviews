@@ -1,2 +1,2 @@
 *.pyc
-/api_keys.env
+/movie/management/commnads/api_keys.env

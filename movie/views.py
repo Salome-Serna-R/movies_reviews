@@ -89,7 +89,7 @@ def statistics_view(request):
 
 def recommend(request):
     recomended_movie = None
-    load_dotenv(r'C:\Users\USUARIO\Desktop\INGENIERA\Cuarto Semestre\Taller_Proyecto1\moviereviewsproject\movie\management\commands\api_keys.env')
+    load_dotenv(r'C:\Users\USUARIO\Desktop\INGENIERA\Cuarto Semestre\Taller_copia_p1\moviereviewsproject\movie\management\commands\api_keys.env')
     client = OpenAI(
         # This is the default and can be omitted
         api_key=os.environ.get('openai_api_key'),   
@@ -120,4 +120,4 @@ def recommend(request):
 
 
 def recommendations_movie(request):
-    return render(request, 'recommendations.html')
+    return render(request, 'recomendations.html')

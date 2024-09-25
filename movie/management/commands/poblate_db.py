@@ -6,7 +6,7 @@ import numpy as np
 from openai import OpenAI
 from dotenv import load_dotenv, find_dotenv
 
-load_dotenv(r'C:\Users\USUARIO\Desktop\INGENIERA\Cuarto Semestre\Taller_Proyecto1\moviereviewsproject\movie\management\commands\api_keys.env')
+load_dotenv(r'C:\Users\USUARIO\Desktop\INGENIERA\Cuarto Semestre\Taller_copia_p1\moviereviewsproject\movie\management\commands\api_keys.env')
 client = OpenAI(
         api_key=os.environ.get('openai_api_key'),
 )
